@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestoBar</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            text-align: center;
+            max-width: 700px;
+            background-color: #ffffff;
+        }
+        .main-header{
+            border-radius: 0px;
+            border:2px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            width: 100%;
+        }
+        header h1{
+            color: #000;
+        }
+
+        .hero {
+            background-image: url('images/theme.jpg');
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffa500;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #e69500;
+        }
+
+        .welcome {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 40px;
+        }
+
+        .welcome h3 {
+            color: #d4d2cc;
+            font-weight: lighter;
+            text-decoration: orange underline;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-underline-offset: 10px;
+        }
+        
+
+        .welcome h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .welcome p {
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 26px auto;
+        }
+
+        section {
+            padding: 40px 25px;
+        }
+
+        .services, .testimonials {
+            text-align: center;
+            margin-bottom: 20px 40px;
+            padding: 10px;
+        }
+        .services {
+            padding: 40px 20px;
+            
+        }
+
+        .services p:first-child {
+            color: darkgrey;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: orange;
+            text-underline-offset: 6px;
+            font-weight:lighter;
+            font-size: 18px;
+        }
+
+        .services h2 {
+            font-size: 28px;
+            margin: 10px 0;
+            color: #000;
+        }
+
+        .services p:nth-of-type(2) {
+            color: darkgray;
+            font-size: 18px;
+            margin: 10px 0 30px;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .service-item div {
+            max-width: 250px;
+            text-align: center;
+
+        }
+
+        .service-itemm img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .service-itemm h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #000;
+        }
+
+        .service-itemm p {
+            color: gray;
+            font-size: 16px;
+        }
+
+        .menu {
+            /* padding: 50px 20px; */
+            padding: 0px;
+            
+        }
+        .menu-title h3{
+            color:#555;
+            text-decoration: orange underline;
+            text-underline-offset: 5px;
+        }
+
+        .menu h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .menu p {
+            color: gray;
+            padding:0 49px;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .menu-items {
+            display: flex;
+            justify-content: center;
+            /*gap: 150px;*/
+            align-items: center;
+            flex-wrap: wrap; /* Makes it responsive */
+            max-width: 900px; /* Adjust as needed */
+            margin: auto; /* Center the whole section */
+        }
+
+        .menu-item {
+            background-color: none;
+            border-radius: 0;
+            text-align: center;
+            flex: 1;
+            max-width: 300px;           
+
+        }
+        .pizza{
+            display: flex;
+            gap: 1px;
+            max-width: 900px;
+            justify-content: space-between;
+            margin: auto;
+            align-items: center;
+            width: 100%;
+        }
+        .one-menu-item,
+        .menu-item {
+            flex: 1;  /* Each takes 50% of the width */
+            padding: 20px;
+        }
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+        }
+        .menu-item h3 {
+            font-size: 20px;
+            margin: 15px 0;
+            color: #222;
+        }
+
+        .menu-item p {
+            color: gray;
+            font-size: 16px;
+            /* padding: 0 15px; */
+            margin-bottom: 0px;
+        }
+
+        .menu-item a {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu-item a:hover {
+            background-color: #e69500;
+        }
+        .testimonials .dtestimonial-item {
+            margin: 20px 0;
+        }
+        .video-container {
+            margin-top: 50px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            max-width: 900px;
+            padding: 50px 20px;
+        }
+        .video-block{
+            padding:0px 40px;
+            background-color: rgb(249, 249, 249);
+            max-width: 900px;
+            border-radius: 0;
+        }
+        video {
+            max-width: 100%;
+            border-radius: 0px;
+            padding-bottom: 0px;
+        }
+        .content {
+            margin-top: 20px;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        .content h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 0px;
+        }
+        #testimonial img{
+            border-radius: 50%;
+            padding: 0px 70px;
+            width: 50%;
+            height: auto;
+            display: block
+            
+        }
+        #testimonials{
+            background-color: #fcfbf8;
+        }
+
+    .pizza {
+        display: flex;
+        justify-content: flex-start; /* Aligns items to the left */
+        /* align-items: center; */
+        width: 100%;
+        background-color: rgb(249, 248, 248);
+    }
+
+    .one-pizza-item {
+        flex: 2; /* Takes available space */
+        text-align: left; /* Ensures text inside is left-aligned */
+        padding: 20px;
+        
+    }
+    .one-pizza-item p{
+        padding: 2px;
+        margin-bottom: 0px;
+        line-height: 25px;
+        color:rgb(179, 185, 185)
+    }
+    .one-pizza-item h4{
+        text-align: left;
+        font-size: small;
+        letter-spacing: 1px;
+        color: rgb(183, 181, 181);
+        font-weight: lighter;
+        text-decoration: orange underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 10px;
+    }
+    .one-pizza-item h3{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: x-large;
+    }
+    .one-pizza-item a {
+        display: inline-block;
+        margin-top: 10px;
+        background-color: orange;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .one-pizza-item a:hover {
+        background-color: #e69500;
+    }
+
+    .pizza-item {
+        flex: 2.3; /* Takes available space */
+        display: flex;
+        justify-content: flex-end; /* Aligns image to the right */
+    }
+
+    .pizza-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+        .stats-section {
+            position: relative;
+            width: 100%;
+            height: 100%; /* Adjust height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 113.1px; /* Adjust padding for better spacing */
+            
+        }
+
+        .overlay {
+            position: absolute;
+            top: -93px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('background2.jpg') no-repeat center center;
+            background-size: contain; /* Ensures the image fits inside */
+            opacity: 0.7; /* Adjust for visibility */
+            z-index: -1; /* Keeps it behind the content */
+            
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center; /* Center items */
+            gap: 50px; /* Adjust this value for more space */
+        } 
+        .stat-item{
+            color:#fff1f1;
+        }
+        .stat-item h2 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .stat-item p {
+        font-size: 16px;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 40px 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between; /* Ensures columns are spaced out */
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            flex: 1; /* Ensures equal width */
+            min-width: 200px; /* Prevents excessive shrinking */
+            margin-bottom: 20px;
+            text-align: left;
+            
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            line-height: 2.2;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 20px auto 0;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 15px;
+        }
+
+        .footer-bottom a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column; /* p */
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        @media (max-width: 768px) {
+
+                .service-item {
+                    flex-direction: column; /* Stack columns vertically */
+                    gap: 20px; /* Add spacing between stacked items */
+                }
+
+                .service-itemm {
+                    width: 100%; /* Ensure each column takes full width */
+                }
+
+                .menu-items {
+                    flex-direction: column; /* Stack columns vertically */
+                    gap: 20px; /* Add spacing between stacked items */
+                }
+
+                .menu-item {
+                    width: 100%; /* Ensure each column takes full width */
+                }
+
+                .pizza {
+                    flex-direction: column; /* Stack columns vertically */
+                    gap: 20px; /* Add spacing between stacked items */
+                }
+
+                .pizza-item {
+                    width: 100%; /* Ensure each column takes full width */
+                }
+
+                .one-pizza-item {
+                    width: 100%; /* Ensure each column takes full width */
+                }
+
+            }
+    </style>
+</head>
+<body>
+    <div class="main-header">
+        <header class="header">
+            <h1>RESTOBAR</h1>
+        </header>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>We Serve Healthy & Delicious Foods</h2>
+                <p>Your one-stop solution for tasty, healthy meals. Discover our variety of dishes made with fresh ingredients.</p>
+                <a href="#" class="btn">Get Your Order Here!</a>
+            </div>
+        </section>
+    </div>
+    <section class="welcome">
+        <h3>WELCOME</h3>
+        <h2>Welcome To RestoBar</h2>
+        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+    </section>
+
+    <section class="services">
+        <p>SERVICES</p>
+        <h2>Our Services</h2>
+        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+        <div class="service-item">
+            <div class="service-itemm">
+                <img src="images/HGfood.jpg" alt="Healthy Foods Icon">
+                <h3>Healthy Foods</h3>
+                <p>Far far away, behind the word mountains, far from the countries.</p>
+            </div>
+            <div class="service-itemm">
+                <img src="images/OGrecipe.jpg" alt="Original Recipes Icon">
+                <h3>Original Recipes</h3>
+                <p>Far far away, behind the word mountains, far from the countries.</p>
+            </div>
+        </div>
+        <div class="video-block">
+            <div class="video-container">
+                <video controls>
+                    <source src="recipevdo.mp4" type="video/mp4">Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content">
+                <h3>Watch Our Video</h3>
+                <p>
+                    A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                    It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="menu">
+        <div class="menu-title">
+            <h3>MENU</h3>
+        </div>
+        <h2>Our Delicious Food</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="images/pasta.jpg" alt="Pasta">
+                <h3>Pasta, Sauce Mix</h3>
+                <p>For ways behind the word mountains.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/fruits.jpg" alt="Sweetened Fruits">
+                <h3>Sweetened Fruits</h3>
+                <p>For ways behind the word mountains.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+        <div class="pizza">
+            <div class="one-pizza-item">
+                <h4>BREAKFAST</h4>
+                <h3> Grilled Beef with potatoes</h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <a href="#" >Read More</a>
+            </div>
+            <div class="pizza-item">
+                    <img src="images/grilled.jpg" alt="Dish 6" >
+            </div>
+        </div>
+        <div class="pizza">
+            <div class="pizza-item">
+                <img src="images/lunch.jpg" alt="Dish 6" >
+            </div>
+            <div class="one-pizza-item">
+                <h4>LUNCH</h4>
+                <h3> Grilled Beef with potatoes</h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <a href="#" >Read More</a>
+            </div>
+        </div>
+        <div class="pizza">
+            <div class="one-pizza-item">
+                <h4>DINNER</h4>
+                <h3> Grilled Beef with potatoes</h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <a href="#" >Read More</a>
+            </div>
+            <div class="pizza-item">
+                    <img src="images/dinner.jpg" alt="Dish 6" >
+            </div>
+        </div>
+        <div class="pizza">
+            <div class="pizza-item">
+                <img src="images/dessert.jpg" alt="Dish 6" >
+            </div>
+            <div class="one-pizza-item">
+                <h4>DESSERT</h4>
+                <h3> Grilled Beef with potatoes</h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <a href="#" >Read More</a>
+            </div>
+        </div>
+    </section>
+    <section class="stats-section">
+        <div class="overlay"></div>
+        <div class="stats-container">
+            <div class="stat-item">
+                <h2>9457</h2>
+                <p>Happy Customer</p>
+            </div>
+            <div class="stat-item">
+                <h2>20</h2>
+                <p>Years of Experienced</p>
+            </div>
+            <div class="stat-item">
+                <h2>80</h2>
+                <p>Branches</p>
+            </div>
+            <div class="stat-item">
+                <h2>980</h2>
+                <p>Staff</p>
+            </div>
+        </div>
+    </section>
+    <section class="menu" id="readstories">
+        <div class="menu-title">
+            <h3>BLOG</h3>
+        </div>
+        <h2>Read Stories</h2>
+        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="images/pasta.jpg" alt="Pasta">
+                <p style="font-size: small; color: rgb(165, 170, 174);">POSTED ON FEB 18, 2019 FOOD</p>
+                <h3>Healthy Foods For Kids</h3>
+                <p>Far far away, behind the word mountains, far from the countries</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="menu-item">
+                <img src="images/fruits.jpg" alt="Sweetened Fruits">
+                <p style="font-size: small; color: rgb(165, 170, 174);">POSTED ON FEB 18, 2019 FOOD</p>
+                <h3>A Fresh Food Organic</h3>
+                <p>Far far away, behind the word mountains, far from the countries</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+        <section class="menu" id="testimonials">
+            <div class="menu-title">
+                <h3>SAYS</h3>
+            </div>
+            <h2>Testimonial</h2>
+            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <div class="menu-items" id="testimonial">
+                <div class="menu-item">
+                    <img src="images/ronald.jpg" alt="Ronald Tuff">
+                    
+                    <h3>Ronald Tuff</h3>
+                    <p>Businessman</p>
+                    <p>Far far away, behind the word mountains, far from the countries</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="menu-item">
+                    <img src="images/william.jpg" alt="William Clarson">
+                    <h3>William Clarson</h3>
+                    <p>Businessman</p>
+                    <p>Far far away, behind the word mountains, far from the countries</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>RestoBar</h3>
+                    <p>A small river named <br> Duden flows by their <br>place and supplies it <br> with the necessary <br>regelialia.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p>203 Fake St. Mountain<br> View, San Francisco, <br>California, USA</p>
+                    <p>+2 392 3929 210</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#">Breakfast</a></li>
+                        <li><a href="#">Lunch</a></li>
+                        <li><a href="#">Dinner</a></li>
+                        <li><a href="#">Dessert</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>© 2018 Restobar. All Rights Reserved</p>
+                <a href="#">Unsubscribe</a>
+            </div>                
+        </footer>                                                                                          </body>
+</html>
